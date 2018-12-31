@@ -31,6 +31,7 @@ public class Ground implements MoveDevice, DeadDevice, AttackDevice {
             }
             try{
                 writer.println("moveForward "+x1 + " " + y1+"\n");
+                writer.flush();
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -248,6 +249,7 @@ public class Ground implements MoveDevice, DeadDevice, AttackDevice {
     public synchronized void attackMethod(Creature creature, int attack) {
         try {
             writer.println("attack "+creature.getX()+" "+creature.getY());
+            writer.flush();
         } catch (Exception e) {
             e.printStackTrace();
         }
